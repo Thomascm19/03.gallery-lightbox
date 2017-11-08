@@ -57,6 +57,12 @@ var m = {
     p.modal.childNodes[1].style.textAlign = "center";
     p.modal.childNodes[1].style.background = "white";
     p.modal.childNodes[1].style.borderRadius = "0px 0px 0px 5px"
+
+    p.modal.childNodes[1].addEventListener("click", m.salirGaleria)
+
+  },
+  salirGaleria: function() {
+    p.lightbox.parentNode.removeChild(p.lightbox);
   }
 
 }
