@@ -4,7 +4,8 @@ var p = {
   rutaImagen: null,
   cuerpoDom: document.querySelector("body"),
   lightbox: null,
-  modal: null
+  modal: null,
+  animacionGaleria: "fade"
 }
 
 var m = {
@@ -36,6 +37,14 @@ var m = {
 
     p.modal.childNodes[0].style.width = "100%";
     p.modal.childNodes[0].style.border = "15px solid white";
+
+    if (window.matchMedia("(max-width:1000px)").matches) {
+      p.modal.style.width = "90%";
+    } else {
+      p.modal.style.width = "60%";
+    }
+
+
 
     p.modal.style.display = "block";
     p.modal.style.position = "relative";
