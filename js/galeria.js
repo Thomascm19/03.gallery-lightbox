@@ -30,7 +30,6 @@ var m = {
     p.lightbox.style.lefts = 0;
 
     p.lightbox.appendChild(document.createElement("DIV")).setAttribute("id", "modal");
-
     p.modal = document.querySelector("#modal");
 
     p.modal.innerHTML = img.outerHTML + "<div>x</div>";
@@ -40,7 +39,7 @@ var m = {
 
     p.modal.style.display = "block";
     p.modal.style.position = "relative";
-    p.modal.style.top = "60%";
+    p.modal.style.width = "60%"
     p.modal.style.top = "50%";
     p.modal.style.left = "50%";
     p.modal.style.marginLeft = -p.modal.childNodes[0].width / 2 + "px";
