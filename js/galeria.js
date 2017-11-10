@@ -14,10 +14,12 @@ var m = {
       p.imgGaleria[i].addEventListener("click", m.capturaImagen)
     }
   },
+
   capturaImagen: function(img) {
     p.rutaImagen = img.target;
     m.lightbox(p.rutaImagen)
   },
+
   lightbox: function(img) {
     p.cuerpoDom.appendChild(document.createElement("DIV")).setAttribute("id", "lightbox");
     p.lightbox = document.querySelector("#lightbox");
@@ -35,6 +37,8 @@ var m = {
 
     p.modal.innerHTML = img.outerHTML + "<div>x</div>";
 
+    p.modal.style.display = "block";
+		p.modal.style.position = "relative";
     p.modal.childNodes[0].style.width = "100%";
     p.modal.childNodes[0].style.border = "15px solid white";
 
@@ -46,7 +50,7 @@ var m = {
     //Se desliza la imagen de forma horizontal
     if (p.animacionGaleria == "slideLeft") {
 
-      p.modal.style.top = "60%";
+      p.modal.style.top = "50%";
       p.modal.style.left = 0;
       p.modal.style.opacity = 0;
 
@@ -64,34 +68,20 @@ var m = {
     if (p.animacionGaleria == "slideTop") {
 
       p.modal.style.top = "-100%";
-      p.modal.style.left = "50%";
-      p.modal.opacity = 0;
+      p.modal.style.left = "20%";
+      p.modal.style.opacity = 0;
 
       setTimeout(function() {
 
         p.modal.style.transition = ".5s top ease";
+        p.modal.style.top = "5%";
         p.modal.style.opacity = 1;
         p.modal.marginLeft = -p.modal.childNodes[0].width / 2 + "px";
         p.modal.marginTop = -p.modal.childNodes[0].height / 2 + "px";
 
       }, 50)
     }
-    //Imagen con efecto fade
-    if (p.animacionGaleria == "fade") {
 
-      p.modal.style.top = "50%";
-      p.modal.style.left = "50%";
-      p.modal.opacity = 0;
-
-      setTimeout(function() {
-
-        p.modal.style.transition = ".5s top ease";
-        p.modal.style.opacity = 1;
-        p.modal.marginLeft = -p.modal.childNodes[0].width / 2 + "px";
-        p.modal.marginTop = -p.modal.childNodes[0].height / 2 + "px";
-
-      }, 50)
-    }
 
     p.modal.childNodes[1].style.position = "absolute";
     p.modal.childNodes[1].style.right = "5px";
